@@ -21,3 +21,20 @@
 //implementation. If you are truly stumped, please feel free to consult the reference answers in 
 //the last section of the module. Ideally, you should eventually complete the problem on your own.
 
+// Note: This is a simple, albeit temporarily incorrect implementation of the standard Array method "every()":
+// https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/every
+
+// FUNCTION DEFINITION(S)
+function every(array, callbackFunction) {
+    var doesEveryElementMatch = true;
+  
+    for (var i = 0; i < array.length; i++) {
+      doesEveryElementMatch = callbackFunction(array[i]);
+    }
+  
+    return doesEveryElementMatch;
+  }
+  
+  // ASSERTION FUNCTION(S) TO BE USED
+  
+  // TESTS CASES
