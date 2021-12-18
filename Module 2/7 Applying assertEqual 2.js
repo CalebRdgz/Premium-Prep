@@ -38,3 +38,5 @@ function every(array, callbackFunction) {
   // ASSERTION FUNCTION(S) TO BE USED
   
   // TESTS CASES
+
+  //hello
