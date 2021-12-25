@@ -29,14 +29,34 @@ function every(array, callbackFunction) {
     var doesEveryElementMatch = true;
   
     for (var i = 0; i < array.length; i++) {
+      //if doesEvery is ever false, return it directly
+      if (doesEveryElementMatch === false){
+        return doesEveryElementMatch; //stops the for loop and the function
+      }
       doesEveryElementMatch = callbackFunction(array[i]);
+      console.log("doesEveryElementMatch: ", doesEveryElementMatch);
     }
   
     return doesEveryElementMatch;
   }
   
   // ASSERTION FUNCTION(S) TO BE USED
-  
+function assertEqual(actual, expected, testName){
+  if (actual === expected){
+    console.log('passed');
+  }else{
+    console.log('FAILED ['+testName+'] Expected "'+expected+'", but got "'+actual+'"');
+  }
+}
   // TESTS CASES
+  function lessThan10(val){
+    return val < 10;
+  }
 
-  //hello
+  var arrayTrue = [1, 3, 9, 2, 7];
+  var actualTrue = every(arrayTrue, lessThan10);
+  assertEqual(actualTrue, true, 'should return true when all values return true when tested');
+
+  var arrayFalse = [1, 13, 9, 2, 7];
+  var actualFalse = every(arrayFalse, lessThan10)
+  assertEqual(actualFalse, false, 'should return false when not all array values return true when tested');
