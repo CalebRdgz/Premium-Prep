@@ -17,7 +17,7 @@ console.log(output); // --> [1, 2, 3, 4, 5, 6]
 // Important: It should be a NEW array instance, not the original array instance.
 function addToFrontOfNew(arr, element) {
     // your code here
-    var newArr = arr.slice(); //slice() with no arguments slices entire array into a new array
+    var newArr = arr.slice(); //slice() with no arguments slices (and copies) entire array into a new array
     newArr.unshift(element);
     return newArr;
   }

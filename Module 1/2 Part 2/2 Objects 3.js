@@ -5,7 +5,7 @@
     //The legal driving age in the United States is 16.
 function isPersonOldEnoughToDrive(person) {
     // your code here
-    if (person.age >= 16){
+    if (person.age >= 16){ //or person['age']
         return true;
     }else{
         return false;
